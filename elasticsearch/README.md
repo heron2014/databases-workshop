@@ -23,6 +23,34 @@ Wikipedia, The Guardian, Stack Overflow, GitHub
  And it is easy to get going!
  
 ### Installation guide [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/_installing_elasticsearch.html)
+
+Quick installation guide: 
+
+I'll assume you're on a Linux or Mac environment.
+You should also have JDK 6 or above installed.
+
+```
+wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.2.tar.gz
+tar -zxvf elasticsearch-1.7.2.tar.gz
+cd elasticsearch-1.7.2
+bin/elasticsearch
+```
+
+Check out the latest version and amend it accordingly. 
+
+You should see on your terminal something like this: 
+
+
+
+
+
+ElasticSearch is now running! You can access it at ```http://localhost:9200``` on your web browser,
+which returns this:
+
+
+Now you are ready to start indexing! 
+
+
 ### Running ES [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/running-elasticsearch.html)
 
 ## Talking to ES
@@ -78,9 +106,17 @@ Building employer directory with following functionalities:
 #### How to store data in ES based on our example above
 Storing data in Elasticsearch is called indexing (Index a document  === Store a document ) 
 
-Document represent a single employee (in our example)
+An index — is a place to store related data.
+In reality, an index is just a logical namespace that points to one or more physical **shards**.
+
+Shards are how Elasticsearch distributes data around your cluster. Think of **shards as containers** for data.
+
+Document represent a single employee (in our example). Documents are stored in shards.
 
 Documents belongs to => types => types lives in index.
+
+[more about index](https://www.elastic.co/guide/en/elasticsearch/guide/current/_add_an_index.html)
+[more about document](https://www.elastic.co/guide/en/elasticsearch/guide/current/document.html)
 
 <a name="es-versus-rel"/>
 #### ES versus Relational DB
@@ -101,6 +137,8 @@ These types hold multiple documents (rows), and each document has multiple field
 **Index(noun)** is like a database in a traditional relational database. It is the place to store related documents. 
 Plural – indices or indexes.
 
+[Index in more detail](https://www.elastic.co/blog/what-is-an-elasticsearch-index)
+
 **Index(verb)** is used to store a document in an index (noun) so that it can be retrieved and queried. 
 It is much like the INSERT keyword in SQL. 
 
@@ -110,6 +148,18 @@ It is much like the INSERT keyword in SQL.
 * Each document will be of type employee
 * That type will live in the megacorp index
 * That index will reside within our ES cluster
+
+[read more](https://www.elastic.co/guide/en/elasticsearch/guide/current/index-doc.html)
+
+```
+PUT /{index}/{type}/{id}
+{
+  "field": "value",
+  ...
+}
+```
+
+In our case: 
 
 ```
 PUT /megacorp/employee/1
@@ -145,13 +195,21 @@ employee - type
 
 <a name="retrieve"/>
 #### Retrieve a document
+To get the document out of Elasticsearch, we use the same _index, _type, and _id, but the HTTP verb changes to GET:
+
 ```GET /megacorp/employee/1```
 
 or using curl:
 
 ```curl -XGET "http://localhost:9200/megacorp/employee/1"```
 
-response: 
+if you want to display response headers pass ```-i``` argument to your curl.
+
+Response has extra the _source field, 
+which contains the original JSON document that we sent to Elasticsearch when we indexed it.
+
+Also the response to the GET request includes ```{"found": true}```, if document exists, if not the response would include 
+```{"found": false}```
 
 ```json
 {
@@ -172,6 +230,12 @@ response:
    }
 }
 ```
+##### Check whether the document exist
+
+```curl -i -XHEAD http://localhost:9200/website/blog/123```
+
+HEAD requests don’t return a body. Elasticsearch will return a 200 OK status code if the document exist, and
+404 Not Found if doesn’t exist
 
 #### Search 
 
