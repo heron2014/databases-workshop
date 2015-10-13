@@ -84,6 +84,7 @@ Documents belongs to => types => types lives in index.
 
 <a name="es-versus-rel"/>
 #### ES versus Relational DB
+
 <span style="background-color:#E1E0EA">
 **Relational DB  ⇒ Databases ⇒ Tables ⇒ Rows      ⇒ Columns**
 </span>
@@ -92,8 +93,8 @@ Documents belongs to => types => types lives in index.
 **Elasticsearch  ⇒ Indices   ⇒ Types  ⇒ Documents ⇒ Fields**
 </span>
 
-**An Elasticsearch cluster can contain multiple indices (databases), which in turn contain multiple types (tables). 
-These types hold multiple documents (rows), and each document has multiple fields (columns).**
+*An Elasticsearch cluster can contain multiple indices (databases), which in turn contain multiple types (tables). 
+These types hold multiple documents (rows), and each document has multiple fields (columns).*
 
 <a name="index-differ"/>
 #### Difference between Index(noun) and Index (verb)
