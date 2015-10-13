@@ -353,13 +353,50 @@ GET /megacorp/employee/_search
 }
 ```
 
+Example of response is :
+
+```
+{
+   ...
+   "hits": {
+      "total":      2,
+      "max_score":  0.16273327,
+      "hits": [
+         {
+            ...
+            "_score":         0.16273327, 
+            "_source": {
+               "first_name":  "John",
+               "last_name":   "Smith",
+               "age":         25,
+               "about":       "I love to go rock climbing",
+               "interests": [ "sports", "music" ]
+            }
+         },
+         {
+            ...
+            "_score":         0.016878016, 
+            "_source": {
+               "first_name":  "Jane",
+               "last_name":   "Smith",
+               "age":         32,
+               "about":       "I like to collect rock albums",
+               "interests": [ "music" ]
+            }
+         }
+      ]
+   }
+}
+```
+
+
 By default ES sorts matching results by their **relevance score**. The first and highest-scoring result is:
 
-when, i.e John Smith’s about field clearly says “rock climbing” in it;
+John Smith’s because in his about field he clearly says “rock climbing” in it;
 
-second result could be:
+second result is:
 
-when, i.e Jane's about field only mention "rock"
+Jane because her about field only mention "rock"
 
 **Conclusion:**
 
