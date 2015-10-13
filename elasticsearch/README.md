@@ -1,4 +1,4 @@
-# This tutorial aim is to give a taste of what you can do with Elasticsearch [official docs](https://www.elastic.co/) 
+# This tutorial aim is to give a taste of what you can do with [Elasticsearch](https://www.elastic.co/) 
 
 ## What is ES?
 Elasticsearch is a real-time distributed search and analytics engine. It allows you to explore your data at a speed 
@@ -9,21 +9,21 @@ and all three in combination.
 Wikipedia, The Guardian, Stack Overflow, GitHub
 
 ## What ES can do and why is it so great?
-* perform full-text search
-* handle synonyms
-* score documents by relevance
-* generate analytics and aggregations from the same data
-* all above in real time
+* **perform full-text search**
+* **handle synonyms**
+* [**score documents by relevance**](#text-search)
+* **generate analytics and aggregations from the same data**
+* **all above in real time**
  
  Elasticsearch encourages you to explore and utilize your data, rather than letting it rot in a warehouse
- because it is too difficult to query. [Read more](https://www.elastic.co/guide/en/elasticsearch/guide/current/intro.html)
+ because it is too difficult to query. [read more](https://www.elastic.co/guide/en/elasticsearch/guide/current/intro.html)
  
  Elasticsearch is a different kind of beast, especially if you come from the world of SQL. 
  It's great for : performance, scale, near real-time search, and analytics across massive amounts of data.
  And it is easy to get going!
  
-## Installation guide [Here](https://www.elastic.co/guide/en/elasticsearch/guide/current/_installing_elasticsearch.html)
-## Running ES [Here](https://www.elastic.co/guide/en/elasticsearch/guide/current/running-elasticsearch.html)
+### Installation guide [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/_installing_elasticsearch.html)
+### Running ES [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/running-elasticsearch.html)
 
 ## Talking to ES
 
@@ -47,7 +47,7 @@ A request to Elasticsearch consists of the same parts as any HTTP request:
 
 -d  - run it in the background as a daemon.
 
-## Workshop (following the official tutorial [Here](https://www.elastic.co/guide/en/elasticsearch/guide/current/_finding_your_feet.html))
+## Workshop (following the official tutorial [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/_finding_your_feet.html))
 Building employer directory with following functionalities:
 * Retrieve the full details of any employee
 
@@ -193,7 +193,7 @@ Search for all employees in the megacorp index who have "Smith" in the last_name
 ```GET /megacorp/employee/_search?q=last_name:Smith```
 
 <a name="queryDSL"/>
-##### Search with query DSL [Read more](https://www.elastic.co/guide/en/elasticsearch/guide/current/_search_with_query_dsl.html)
+##### Search with query DSL [read more](https://www.elastic.co/guide/en/elasticsearch/guide/current/_search_with_query_dsl.html)
 
 Elasticsearch provides a rich, flexible, query language called the query DSL,
 which allows us to build much more complicated, robust queries.
@@ -224,7 +224,7 @@ curl -XGET "http://localhost:9200/megacorp/employee/_search" -d'
 }'
 ```
 
-What is a difference?
+**What is a difference?**
 
 For one, we are no longer using query-string parameters, but instead a request body. 
 This request body is built with JSON, and uses a match query.
@@ -283,11 +283,11 @@ when, i.e Jane's about field only mention "rock"
 
 **Conclusion:**
 
-Because only “rock” was mentioned, and not “climbing,” her _score is lower than John’s.
+**Because only “rock” was mentioned, and not “climbing,” her _score is lower than John’s.**
 
-Elasticsearch can search within full-text fields and return the most relevant results first.
+**Elasticsearch can search within full-text fields and return the most relevant results first.**
 
-This concept is completely foreign to traditional relational databases, in which a record either matches or it doesn’t.
+**This concept is completely foreign to traditional relational databases, in which a record either matches or it doesn’t.**
 
 <a name="phrase"/>
 #### Phrase search
@@ -305,7 +305,7 @@ GET /megacorp/employee/_search
 }
 ```
 <a name="highlight"/>
-#### Highlighting our searches [More](https://www.elastic.co/guide/en/elasticsearch/guide/current/highlighting-intro.html)
+#### Highlighting our searches [read more](https://www.elastic.co/guide/en/elasticsearch/guide/current/highlighting-intro.html)
 
 Find all employees who enjoy "rock climbing" and highlight the matches.
 
@@ -325,7 +325,7 @@ GET /megacorp/employee/_search
 }
 ```
 <a name="analytics"/>
-#### Analytics [Read more](https://www.elastic.co/guide/en/elasticsearch/guide/current/_analytics.html)
+#### Analytics [read more](https://www.elastic.co/guide/en/elasticsearch/guide/current/_analytics.html)
 
  Elasticsearch has functionality called aggregations, which allow you to generate sophisticated analytics over your data.
  It is similar to GROUP BY in SQL, but much more powerful.
