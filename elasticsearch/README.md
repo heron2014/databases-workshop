@@ -84,19 +84,23 @@ Documents belongs to => types => types lives in index.
 
 <a name="es-versus-rel"/>
 #### ES versus Relational DB
-Relational DB  ⇒ Databases ⇒ Tables ⇒ Rows      ⇒ Columns
+<span style="background-color:#E1E0EA">
+**Relational DB  ⇒ Databases ⇒ Tables ⇒ Rows      ⇒ Columns**
+</span>
 
-Elasticsearch  ⇒ Indices   ⇒ Types  ⇒ Documents ⇒ Fields
+<span style="background-color:#E1E0EA">
+**Elasticsearch  ⇒ Indices   ⇒ Types  ⇒ Documents ⇒ Fields**
+</span>
 
-An Elasticsearch cluster can contain multiple indices (databases), which in turn contain multiple types (tables). 
-These types hold multiple documents (rows), and each document has multiple fields (columns).
+**An Elasticsearch cluster can contain multiple indices (databases), which in turn contain multiple types (tables). 
+These types hold multiple documents (rows), and each document has multiple fields (columns).**
 
 <a name="index-differ"/>
 #### Difference between Index(noun) and Index (verb)
-Index(noun) is like a database in a traditional relational database. It is the place to store related documents. 
+**Index(noun)** is like a database in a traditional relational database. It is the place to store related documents. 
 Plural – indices or indexes.
 
-Index(verb) is used to store a document in an index (noun) so that it can be retrieved and queried. 
+**Index(verb)** is used to store a document in an index (noun) so that it can be retrieved and queried. 
 It is much like the INSERT keyword in SQL. 
 
 <a name="indexDoc"/>
