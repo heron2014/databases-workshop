@@ -5,6 +5,13 @@ Elasticsearch is a real-time distributed search and analytics engine. It allows 
 and at a scale never before possible. It is used for [full-text search](#text-search), structured search, analytics,
 and all three in combination.
 
+In other words: 
+ElasticSearch is able to achieve fast search responses because, instead of searching the text directly, 
+it searches an index instead.
+
+This is like retrieving pages in a book related to a keyword by scanning the index at the back of a book,
+as opposed to searching every word of every page of the book.
+
 ## Who is using ES?
 Wikipedia, The Guardian, Stack Overflow, GitHub
 
@@ -22,9 +29,15 @@ Wikipedia, The Guardian, Stack Overflow, GitHub
  It's great for : performance, scale, near real-time search, and analytics across massive amounts of data.
  And it is easy to get going!
  
-### Installation guide [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/_installing_elasticsearch.html)
+## How ElasticSearch represents data?
 
-Quick installation guide: 
+In ElasticSearch, a Document is the unit of search and index.
+
+An index consists of one or more Documents, and a Document consists of one or more Fields.
+
+```In database terminology, a Document corresponds to a table row, and a Field corresponds to a table column.```
+ 
+### Quick installation guide or you can check out official guide [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/_installing_elasticsearch.html)
 
 I'll assume you're on a Linux or Mac environment.
 You should also have JDK 6 or above installed.
@@ -40,18 +53,16 @@ Check out the latest version and amend it accordingly.
 
 You should see on your terminal something like this: 
 
-
-
-
+![Elastic](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/img/elastic.png)
 
 ElasticSearch is now running! You can access it at ```http://localhost:9200``` on your web browser,
 which returns this:
 
+![Success](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/img/elastic2.png)
 
 Now you are ready to start indexing! 
 
-
-### Running ES [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/running-elasticsearch.html)
+**Running ES official guide ** [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/running-elasticsearch.html)
 
 ## Talking to ES
 
