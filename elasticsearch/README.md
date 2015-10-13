@@ -483,3 +483,4 @@ Calculate the most popular interests for employees named "Smith"
  }
  ```
 
+## [Quick start to Elasticsearch](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/elastic_search_js.md)

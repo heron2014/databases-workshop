@@ -1,6 +1,7 @@
-# [Quick start with Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html) 
+# Quick start with Elasticsearch [API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-search-2-0)
 
-#### Create a client
+
+#### Create a client [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html)
 
 ```
 var elasticsearch = require('elasticsearch');
@@ -10,25 +11,7 @@ var client = new elasticsearch.Client({
 });
 ```
 
-#### Send a HEAD request to "/?hello=elasticsearch" and allow up to 1 second for it to complete. 
-
-```js
-client.ping({
-  // ping usually has a 100ms timeout
-  requestTimeout: 1000,
-
-  // undocumented params are appended to the query string
-  hello: "elasticsearch!"
-}, function (error) {
-  if (error) {
-    console.trace('elasticsearch cluster is down!');
-  } else {
-    console.log('All is well');
-  }
-});
-```
-
-### Create or update a document [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-index-2-0)
+### Create or update a document 
 
 ```client.index([params, [callback]])```
 
@@ -51,7 +34,7 @@ client.index({
 ```
 [Index API](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/docs-index_.html) 
 
-#### Create document [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-create-2-0)
+#### Create document 
 
 ```client.create([params, [callback]])```
 
@@ -70,6 +53,21 @@ client.create({
     published_at: '2013-01-01',
     counter: 1
   }
+}, function (error, response) {
+  // ...
+});
+```
+
+#### Search 
+
+```client.search([params, [callback]])```
+
+Search with a simple query string query
+ 
+```
+client.search({
+  index: 'myindex',
+  q: 'title:test'
 }, function (error, response) {
   // ...
 });
