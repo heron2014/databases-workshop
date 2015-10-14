@@ -1,6 +1,5 @@
 # Quick start with Elasticsearch [API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-search-2-0)
 
-
 #### Create a client [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html)
 
 ```
@@ -11,7 +10,7 @@ var client = new elasticsearch.Client({
 });
 ```
 
-### Create or update a document 
+#### Create or update a document 
 
 ```client.index([params, [callback]])```
 
@@ -72,3 +71,7 @@ client.search({
   // ...
 });
 ```
+
+### Further reading
+
+* ElasticSearch Node.js client [esta](https://github.com/dwyl/esta)
