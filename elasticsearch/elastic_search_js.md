@@ -1,6 +1,6 @@
 # Quick start with Elasticsearch [API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-search-2-0)
 
-## You can store data using curl commands in your terminal or you can add Sense extension for ES to Chrome
+#### You can store data using curl commands in your terminal or you can add Sense extension for ES to Chrome
 What is Sense?  [check out here](https://www.elastic.co/blog/found-sense-a-cool-json-aware-interface-to-elasticsearch)
 
 If you like GUI for your database which looks like this:
