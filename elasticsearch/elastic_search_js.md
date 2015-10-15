@@ -1,33 +1,25 @@
-# Quick start with Elasticsearch [API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-search-2-0)
+## Using Elasticsearch with Nodejs
 
-#### You can store data using curl commands in your terminal or you can add Sense extension for ES to Chrome
-What is Sense?  [check out here](https://www.elastic.co/blog/found-sense-a-cool-json-aware-interface-to-elasticsearch)
+1. Create a javascript file eg. es.js  
 
-If you like GUI for your database which looks like this:
-
-![gui](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/img/overlook.png)
-
-Follow these simple steps: 
-
-* stop your server
-* navigate to your installation directory and then to /bin
-  * ```elasticsearch1.7.4/bin/plugin -install mobz/elasticsearch-head``` 
-* run your server
-* ```open http://localhost:9200/_plugin/head/```
-
-[read more about gui plugin](https://github.com/mobz/elasticsearch-head)
-
-#### Create a client [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html)
-
+2. In the es.js file:
+ - require elasticsearch
+ - create client
+ - export client 
+ 
 ```
 var elasticsearch = require('elasticsearch');
+
 var client = new elasticsearch.Client({
   host: 'localhost:9200',
   log: 'trace'
 });
-```
 
-#### Create or update a document 
+module.exports = client;
+```
+[Read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html)
+
+3. Create or update a document
 
 ```client.index([params, [callback]])```
 
@@ -48,33 +40,20 @@ client.index({
 
 });
 ```
+
+index - name of your database (i.e. blog)
+
+type - name of yur document (i.e. posts)
+
+body - could be any field that you wish (i.e. title, description, date etc...)
+
 [Index API](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/docs-index_.html) 
 
-#### Create document 
+Basic example with Hapi framework  
 
-```client.create([params, [callback]])```
+![create](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/img/create.png)
 
-Adds a typed JSON document in a specific index, making it searchable. 
-If a document with the same index, type, and id already exists, an error will occur.
-
-```
-client.create({
-  index: 'myindex',
-  type: 'mytype',
-  id: '1',
-  body: {
-    title: 'Test 1',
-    tags: ['y', 'z'],
-    published: true,
-    published_at: '2013-01-01',
-    counter: 1
-  }
-}, function (error, response) {
-  // ...
-});
-```
-
-#### Search 
+4. Basic search 
 
 ```client.search([params, [callback]])```
 
@@ -89,6 +68,28 @@ client.search({
 });
 ```
 
-### Other resources:
+5. Remember to run elasticsearch on another terminal
 
+
+#### If you prefer more visual effects add Sense extension for ES to Chrome
+
+What is [Sense](https://www.elastic.co/blog/found-sense-a-cool-json-aware-interface-to-elasticsearch)?  
+
+GUI for ES looks like this:
+
+![gui](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/img/overlook.png)
+
+Follow these simple steps to install Gui plugin: 
+
+* stop your server
+* navigate to your installation directory and then to /bin
+  * ```elasticsearch1.7.4/bin/plugin -install mobz/elasticsearch-head``` 
+* run your server
+* ```open http://localhost:9200/_plugin/head/```
+
+[More about GUI here](https://github.com/mobz/elasticsearch-head)
+
+### RESOURCES:
+
+* Official [API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-search-2-0)
 * ElasticSearch Node.js client [esta](https://github.com/dwyl/esta)
