@@ -69,8 +69,11 @@ Example:
 * create a key and assign it a value:
 
 ```redis>set username tom```
+
 ```redis>set server:name anita```
+
 ```redis>get username```
+
 ```redis>get server:name```
 
 2. via Node-redis
@@ -312,7 +315,7 @@ Reply: OK
 Hello World
 
 ```
-
+## Mocking and testing Redis [click here](https://github.com/FAC6/book/blob/master/patterns/week5/MockingTestingreadme.md)
 ## RESOURCES
 
 * [Try Redis](http://try.redis.io/)
