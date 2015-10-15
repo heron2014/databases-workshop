@@ -60,6 +60,16 @@ which returns this:
 
 ![Success](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/img/elastic2.png)
 
+It is recommended to set your cluster_name (you can see above my ```"cluster_name" : "venus"``` , you can set the name
+to whatever you want). To do that follow these steps: 
+* stop your server
+* navigate to your installation directory (i.e elasticsearch-1.7.2)
+* open elasticsearch.yml file in your editor (this file sits in config directory)
+* search for ```cluster.name``` 
+* uncomment it and set name : ``` cluster.name = anyname```
+* save it and run your server 
+
+
 Now you are ready to start indexing! 
 
 **Running ES official guide ** [here](https://www.elastic.co/guide/en/elasticsearch/guide/current/running-elasticsearch.html)
@@ -183,7 +193,7 @@ PUT /megacorp/employee/1
 }
 ```
 
-Using curl :
+Open terminal and type store some data using curl command:
 
 ```
 curl -XPUT "http://localhost:9200/megacorp/employee/1" -d'
@@ -210,7 +220,7 @@ To get the document out of Elasticsearch, we use the same _index, _type, and _id
 
 ```GET /megacorp/employee/1```
 
-or using curl:
+or restore data using curl command in your terminal:
 
 ```curl -XGET "http://localhost:9200/megacorp/employee/1"```
 
@@ -255,7 +265,7 @@ HEAD requests don’t return a body. Elasticsearch will return a 200 OK status c
 
 ```GET /megacorp/employee/_search```
 
-using curl :
+using curl command:
 
 ```curl -XGET "http://localhost:9200/megacorp/employee/_search"```
 
@@ -291,7 +301,7 @@ GET /megacorp/employee/_search
 }
 ```
 
-using curl:
+using curl in your terminal:
 
 ```
 curl -XGET "http://localhost:9200/megacorp/employee/_search" -d'
@@ -482,5 +492,9 @@ Calculate the most popular interests for employees named "Smith"
    }
  }
  ```
+ 
+### Where to go from here?
+I have just covered a very small portion of what Elasticsearch is all about. 
+For more information, please refer to the [elastic.co](https://www.elastic.co/) website.
 
-## [Quick start to Elasticsearch](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/elastic_search_js.md)
+#### [Quick start to Elasticsearch](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/elastic_search_js.md)

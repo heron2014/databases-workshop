@@ -1,5 +1,22 @@
 # Quick start with Elasticsearch [API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-search-2-0)
 
+## You can store data using curl commands in your terminal or you can add Sense extension for ES to Chrome
+What is Sense?  [check out here](https://www.elastic.co/blog/found-sense-a-cool-json-aware-interface-to-elasticsearch)
+
+If you like GUI for your database which looks like this:
+
+![gui](https://github.com/heron2014/databases-workshop/blob/master/elasticsearch/img/overlook.png)
+
+Follow these simple steps: 
+
+* stop your server
+* navigate to your installation directory and then to /bin
+  * ```elasticsearch1.7.4/bin/plugin -install mobz/elasticsearch-head``` 
+* run your server
+* ```open http://localhost:9200/_plugin/head/```
+
+[read more about gui plugin](https://github.com/mobz/elasticsearch-head)
+
 #### Create a client [read more](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/quick-start.html)
 
 ```
@@ -72,6 +89,6 @@ client.search({
 });
 ```
 
-### Further reading
+### Other resources:
 
 * ElasticSearch Node.js client [esta](https://github.com/dwyl/esta)
