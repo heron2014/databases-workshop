@@ -93,3 +93,4 @@ Follow these simple steps to install Gui plugin:
 
 * Official [API](https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference-2-0.html#api-search-2-0)
 * ElasticSearch Node.js client [esta](https://github.com/dwyl/esta)
+* Useful web for [JSON GENERATOR](http://www.objgen.com/json)  
