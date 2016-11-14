@@ -198,6 +198,16 @@ You should see the following window:
 That's it, play around how to create new database, new user.
 
 
+### Run the example
+
+- navigate to example folder
+- create new database - test
+- change your username and database in example.js
+- ```npm install```
+- run the example: ```node example.js```
+- go to ```localhost:3001```
+- open your test database, check if the new table was created
+
 ### Installation on Linux
 
  - http://www.techrepublic.com/blog/diy-it-guy/diy-a-postgresql-database-server-setup-anyone-can-handle/
