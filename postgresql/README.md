@@ -1,6 +1,6 @@
 ## How to start with Postgresql
 
-#### Installation on Mac
+## Installation on Mac
 
 There are a couple of ways of installing postgres on your machine:
 - by http://postgresapp.com/
@@ -26,7 +26,7 @@ After either close and open terminal tab or ```source ~/.zshrc or .bash_profile`
 
 You can now check if the path is set up correctly by typing ```which psql```.
 
-##### Connecting to a database
+### Connecting to a database
 
 To start up psql type ```psql``` which is a default command to ```psql -h localhost```
 
@@ -43,7 +43,7 @@ $ psql -w postgres
 $ psql -W postgres
 Password:
 ```
-##### User Management
+### User Management
 
 View current roles defined in Postgresql, type: ```\du``` like below:
 
@@ -81,7 +81,7 @@ To check this out, type: ```\du```
 
 ```postgres=# DROP ROLE kate;```
 
-##### Create new database
+### Create new database
 
 ```postgres=# create database test;```
 
@@ -105,24 +105,24 @@ In gui-tool:
 
 ```postgres=# DROP DATABASE test;```
 
-##### Terminate psql
+### Terminate psql
 
 Terminate connection: ```control + Z```
 
 Then quit the app.
 
-##### Start postgres again
+### Start postgres again
 
 Go to Applications double click on elephant icon to open psql.
 
 In your terminal you can now use: ```psql```
 
 
-##### Installing GUI tool on Mac
+### Installing GUI tool on Mac
 
 List of GUI Tools http://postgresapp.com/documentation/gui-tools.html
 
-### postico
+#### postico
 
 - navigate to https://eggerapps.at/postico/
 - click download, unzip it
@@ -135,7 +135,7 @@ You should see the following window:
 
 - click **connect**
 
-### pgadmin
+#### pgadmin
 
 - navigate to https://www.postgresql.org/ftp/pgadmin3/pgadmin4/v1.1/macos/
 - click latest version
@@ -146,7 +146,7 @@ You should see the following window:
 - move the pgadmin to the Applications folder
 - close the pgadmin window
 
-#### Connect pgadmin to your server
+### Connect pgadmin to your server
 
 - click on server - create - server (or groups depends what you need)
 
@@ -166,11 +166,11 @@ You should see the following window:
 
 
 
-#### Installation on Linux
+### Installation on Linux
 WIP
 
 
-#### References:
+### References:
 - cheat sheet http://www.postgresonline.com/downloads/special_feature/postgresql83_psql_cheatsheet.pdf
 
 - https://blog.risingstack.com/node-js-database-tutorial/
