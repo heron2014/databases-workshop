@@ -119,6 +119,23 @@ In gui-tool:
 
 ```postgres=# DROP DATABASE test;```
 
+You might see this issue:
+
+![](img/issue.png)
+
+To resolve it:
+
+- open gui postico, click on the database you wish to DROP, open sql query and type:
+
+```js
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+WHERE pg_stat_activity.datname = ‘TARGET_DB’
+  AND pid <> pg_backend_pid();
+```
+
+- you can now delete the db, either in gui or in the terminal.
+
 ### Terminate psql
 
 Terminate connection: ```control + Z```
@@ -182,7 +199,8 @@ That's it, play around how to create new database, new user.
 
 
 ### Installation on Linux
-WIP
+
+ - http://www.techrepublic.com/blog/diy-it-guy/diy-a-postgresql-database-server-setup-anyone-can-handle/
 
 
 ### References:
