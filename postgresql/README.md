@@ -7,7 +7,7 @@ There are a couple of ways of installing postgres on your machine:
 - by http://www.enterprisedb.com/products-services-training/pgdownload#macosx
 - by Homebrew
 
-I will demonstrate the first option (note that this option will create two users and two databases by default: your **username** and **postgres**. Conventional way only creates one superuser which is **postgres**, see https://github.com/PostgresApp/PostgresApp/issues/275):
+I will demonstrate the first option (note that this option will create two databases by default: your **username** and **postgres**. Conventional way only creates one which is **postgres**, see https://github.com/PostgresApp/PostgresApp/issues/275):
 
 - navigate to http://postgresapp.com/
 - click download, unzip it
