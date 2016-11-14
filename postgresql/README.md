@@ -100,6 +100,20 @@ In gui-tool:
 
 ```postgres=# GRANT ALL PRIVILEGES ON DATABASE test TO john;```
 
+**Change database:**
+
+![](img/connect.png)
+
+**Create table:**
+
+```CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);```
+
 
 **Remove database**
 
@@ -164,6 +178,7 @@ You should see the following window:
 
 ![](img/access.png)
 
+That's it, play around how to create new database, new user.
 
 
 ### Installation on Linux
