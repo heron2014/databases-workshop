@@ -56,6 +56,30 @@ Log as the postgres user: ```psql -U postgres```
 As you can see we already have two users, but if you wish to create a new user, you have two options for creating users, either from the shell via ```createuser``` or via SQL ```CREATE ROLE```.
 It is important to understand that users and roles are the same thing.
 
+**Create a new user with LOGIN attribute**:
+
+```postgres=# CREATE ROLE john LOGIN;```
+
+**Create a new user with no attributes**:
+
+```postgres=# CREATE ROLE kate;```
+
+To check this out, type: ```\du```
+
+![](img/roles1.png)
+
+**Check specific user, type**:
+
+```\du kate```
+
+
+**Alter roles**:
+
+```postgres=# ALTER ROLE kate LOGIN;```
+
+**Remove user/role**:
+
+```postgres=# DROP ROLE kate;```
 
 ##### Create new database
 
@@ -64,6 +88,7 @@ It is important to understand that users and roles are the same thing.
 To check if the new database has been created, type: ```\l```
 
 Example:
+
 ![create](img/create.png)
 
 In gui-tool:
@@ -71,10 +96,14 @@ In gui-tool:
 
 ![](img/gui-db1.png)
 
-##### Create a new user for just created database
+**Grant privileges on database test to new user**:
+
+```postgres=# GRANT ALL PRIVILEGES ON DATABASE test TO john;```
 
 
+**Remove database**
 
+```postgres=# DROP DATABASE test;```
 
 ##### Terminate psql
 
@@ -119,7 +148,21 @@ You should see the following window:
 
 #### Connect pgadmin to your server
 
-WIP
+- click on server - create - server (or groups depends what you need)
+
+![](img/create-server.png)
+
+- define the name for your server (can be anything)
+
+![](img/h1.png)
+
+- add localhost to the host or remote address
+
+![](img/local.png)
+
+- view your local databases
+
+![](img/access.png)
 
 
 
