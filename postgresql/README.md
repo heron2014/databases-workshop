@@ -20,8 +20,7 @@ You should see terminal as following:
 
 You can use command line to run your postgres by adding the following line to **nano ~/.bash_profile:** (default shell in OS X) or **nano ~/.zshrc**:
 
-```
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin```
+```export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin```
 
 After either close and open terminal tab or ```source ~/.zshrc or .bash_profile``` or  for the bash script to include last modification.
 
@@ -51,6 +50,8 @@ View current roles defined in Postgresql, type: ```\du``` like below:
 ![roles](img/roles.png)
 
 By default, **postgres** is typically the only user that exists, in my case I have two default users (postgres.app installation behaviour) **anita** and **postgres**.
+
+Log as the postgres user: ```psql -U postgres```
 
 As you can see we already have two users, but if you wish to create a new user, you have two options for creating users, either from the shell via ```createuser``` or via SQL ```CREATE ROLE```.
 It is important to understand that users and roles are the same thing.
