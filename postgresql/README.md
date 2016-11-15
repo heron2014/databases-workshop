@@ -208,9 +208,31 @@ That's it, play around how to create new database, new user.
 - go to ```localhost:3001```
 - open your test database, check if the new table was created
 
-### Installation on Linux
+### Installation on Ubuntu
 
- - http://www.techrepublic.com/blog/diy-it-guy/diy-a-postgresql-database-server-setup-anyone-can-handle/
+**Steps:**
+
+```js
+$ sudo apt-get update
+$ sudo apt-get install postgresql postgresql-contrib
+
+```
+**Accessing a Postgres Prompt:**
+
+```
+$ sudo -u postgres psql
+```
+
+**Quit:**
+
+```
+postgres=# \q
+
+```
+
+or ```Ctrl + D```
+
+Reference: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04
 
 
 ### References:
